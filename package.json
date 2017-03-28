@@ -1,0 +1,8 @@
+{
+  "name": "fastlane-sample-plugin-service",
+  "version": "0.0.0",
+  "description": "playing around with fastlane.tools plugins, node.js, react+mobx",
+  "main": "index.js",
+  "author": "Evgeniy Khramkov <ewgeniux@gmail.com>",
+  "license": "MIT"
+}
