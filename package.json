@@ -4,5 +4,16 @@
   "description": "playing around with fastlane.tools plugins, node.js, react+mobx",
   "main": "index.js",
   "author": "Evgeniy Khramkov <ewgeniux@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./build/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
