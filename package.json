@@ -15,8 +15,12 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-typescript": "^3.1.6",
+    "html-webpack-plugin": "^2.28.0",
+    "ts-loader": "^2.0.3",
     "tslint": "^4.5.1",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
     "express": "^4.15.2",
