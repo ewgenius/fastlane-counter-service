@@ -3,7 +3,7 @@ const gutil = require('gulp-util');
 const ts = require('gulp-typescript');
 const clean = require('gulp-clean');
 const webpack = require('webpack');
-const webpackConfig = require('./config/webpack.config');
+const webpackConfig = require('./config/webpack.config.prod');
 
 const tsProjectServer = ts.createProject('src/server/tsconfig.json');
 

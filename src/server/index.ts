@@ -9,7 +9,7 @@ const app = express();
 if (process.env.NODE_ENV === 'development') {
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpack = require('webpack');
-  const webpackConfig = require('../../config/webpack.config.js');
+  const webpackConfig = require('../../config/webpack.config.dev');
   app.use(webpackMiddleware(webpack(webpackConfig)));
 } else {
   app.use(express.static(path.resolve(__dirname, '../client')));
