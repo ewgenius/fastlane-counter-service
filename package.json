@@ -6,7 +6,8 @@
   "author": "Evgeniy Khramkov <ewgeniux@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./build/server/index.js"
+    "start": "node ./build/server/index.js",
+    "postinstall": "gulp"
   },
   "devDependencies": {
     "@types/express": "^4.0.35",
