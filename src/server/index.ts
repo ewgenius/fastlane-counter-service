@@ -6,7 +6,14 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '../client')));
+if (process.env.NODE_ENV === 'development') {
+  const webpackMiddleware = require('webpack-dev-middleware');
+  const webpack = require('webpack');
+  const webpackConfig = require('../../config/webpack.config.js');
+  app.use(webpackMiddleware(webpack(webpackConfig)));
+} else {
+  app.use(express.static(path.resolve(__dirname, '../client')));
+}
 app.use(api);
 
 const server = app.listen(PORT, () => {

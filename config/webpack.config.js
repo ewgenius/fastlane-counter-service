@@ -10,9 +10,13 @@ module.exports = {
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     path: path.resolve(__dirname, '../build/client')
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
   module: {
     rules: [{
       test: /\.tsx?$/,
+      exclude: /node_modules/,
       loader: 'ts-loader',
       options: {
         configFileName: path.resolve(__dirname, '../src/client/tsconfig.json')
