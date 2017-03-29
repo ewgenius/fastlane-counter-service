@@ -3,10 +3,11 @@ import * as path from 'path';
 import api from './api';
 
 const PORT = process.env.PORT || 3000;
+const ENV = process.env.NODE_ENV || 'production';
 
 const app = express();
 
-if (process.env.NODE_ENV === 'development') {
+if (ENV === 'development') {
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpack = require('webpack');
   const webpackConfig = require('../../config/webpack.config.dev');

@@ -32,3 +32,5 @@ gulp.task('compile:client', ['clean:client'], done => {
     done();
   });
 });
+
+gulp.task('default', ['compile:server', 'compile:client']);
