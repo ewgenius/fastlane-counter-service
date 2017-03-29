@@ -1,9 +1,11 @@
 const gulp = require('gulp');
+const gutil = require('gulp-util');
 const ts = require('gulp-typescript');
 const clean = require('gulp-clean');
+const webpack = require('webpack');
+const webpackConfig = require('./config/webpack.config');
 
 const tsProjectServer = ts.createProject('src/server/tsconfig.json');
-const tsProjectClient = ts.createProject('src/client/tsconfig.json');
 
 gulp.task('clean:server', () => {
   return gulp.src('./build/server')
@@ -21,8 +23,12 @@ gulp.task('compile:server', ['clean:server'], () => {
     .pipe(gulp.dest('./build/server'));
 });
 
-gulp.task('compile:client', ['clean:client'], () => {
-  return gulp.src(['./src/client/**/*.ts', './src/client/**/*.tsx'])
-    .pipe(tsProjectClient())
-    .pipe(gulp.dest('./build/client'));
+gulp.task('compile:client', ['clean:client'], done => {
+  const compiler = webpack(webpackConfig);
+  compiler.run((err, stats) => {
+    if (err) {
+      gutil.log(err);
+    }
+    done();
+  });
 });

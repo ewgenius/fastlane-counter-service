@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  bail: false,
   entry: path.resolve(__dirname, '../src/client/index.tsx'),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
