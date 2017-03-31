@@ -11,7 +11,9 @@ if (ENV === 'development') {
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpack = require('webpack');
   const webpackConfig = require('../../config/webpack.config.dev');
-  app.use(webpackMiddleware(webpack(webpackConfig)));
+  app.use(webpackMiddleware(webpack(webpackConfig), {
+    hot: true,
+  }));
 } else {
   app.use(express.static(path.resolve(__dirname, '../client')));
 }
