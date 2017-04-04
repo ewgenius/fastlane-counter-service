@@ -1,5 +1,5 @@
 {
-  "name": "fastlane-sample-plugin-service",
+  "name": "fastlane-counter-service",
   "version": "0.0.0",
   "description": "playing around with fastlane.tools plugins, node.js, react+mobx",
   "main": "./build/server/index.js",
