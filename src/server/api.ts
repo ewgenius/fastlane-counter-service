@@ -3,9 +3,9 @@ import { Router } from 'express';
 const api = Router();
 
 class Counters {
-  counters: { [id: number]: number } = {};
+  private counters: { [id: string]: number } = {};
 
-  increment(id: number) {
+  increment(id: string) {
     if (this.counters[id] === undefined) {
       this.counters[id] = 0;
     } else {
@@ -22,12 +22,25 @@ class Counters {
     }
     return this.counters[id];
   }
+
+  get list() {
+    return Object
+      .keys(this.counters)
+      .map((id) => ({
+        id,
+        counter: this.counters[id]
+      }));
+  }
 }
 
 const counters = new Counters();
 
 api.get('/test', (req, res) => {
   res.send(`${req.method} ok`);
+});
+
+api.get('/counters', (req, res) => {
+  res.send(counters.list);
 });
 
 api.post('/counter/:id/increment', (req, res) => {
