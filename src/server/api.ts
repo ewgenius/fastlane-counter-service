@@ -6,7 +6,7 @@ class Counters {
   counters: { [id: number]: number } = {};
 
   increment(id: number) {
-    if (!this.counters[id]) {
+    if (this.counters[id] === undefined) {
       this.counters[id] = 0;
     } else {
       this.counters[id] += 1;
@@ -15,7 +15,7 @@ class Counters {
   }
 
   decrement(id: number) {
-    if (!this.counters[id]) {
+    if (this.counters[id] === undefined) {
       this.counters[id] = 0;
     } else {
       this.counters[id] -= 1;
